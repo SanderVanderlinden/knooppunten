@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    </head>
+    <body>
+        {% block content %}
+        {% endblock %}
+    </body>
+    <script src="{{ url_for('static', filename='js/copy_to_clipboard.js') }}"></script>
+</html>
