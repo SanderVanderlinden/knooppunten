@@ -12,7 +12,7 @@ def navigation():
 
 
     <p>
-    ideeën: geen bestand gekozen error, link naar mijn git en linkedin + wa nice css (bootstrap?) + add favicon, check .gpx extensie, send to sander (messenger)
+    ideeën: link naar mijn git en linkedin + wa nice css (bootstrap?) + add favicon, check .gpx extensie, send to sander (messenger)
     </p>
     '''
 
