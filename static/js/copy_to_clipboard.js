@@ -5,10 +5,5 @@ function myCopyFunction() {
   document.execCommand("copy");
 
   var tooltip = document.getElementById("myTooltip");
-  tooltip.innerHTML = "Kopieer deze tekst naar het klembord";
-}
-
-function outFunc() {
-  var tooltip = document.getElementById("myTooltip");
   tooltip.innerHTML = "Gekopieerd naar het klembord!";
 }

@@ -12,7 +12,7 @@ def navigation():
 
 
     <p>
-    ideeën: probeer file te behouden of uit te dokteren waarom de file blijft reloaden uitleg van hoe de file te maken, project op git zetten, link naar mijn git en linkedin + wa nice css (bootstrap?) + add favicon, check .gpx extensie, send to sander (messenger)
+    ideeën: geen bestand gekozen error, link naar mijn git en linkedin + wa nice css (bootstrap?) + add favicon, check .gpx extensie, send to sander (messenger)
     </p>
     '''
 
@@ -20,6 +20,10 @@ def navigation():
 def knooppunten():
     if request.method == "POST":
         input_file = request.files["input_file"]
+
+        if input_file.filename == '' or input_file.filename[-4:] != '.gpx':
+             return render_template("knooppunten-get.html", error = "Gelieve een .gpx bestand mee te geven!")
+
         input_data = input_file.stream.read().decode("ISO-8859-1")
         (link_van_naar, link_naar_van) = maak_route(input_data)
         return render_template("knooppunten-post.html", link_van_naar = link_van_naar, link_naar_van = link_naar_van)
