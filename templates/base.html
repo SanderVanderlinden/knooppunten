@@ -8,26 +8,32 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     </head>
-    <body>
+    <body class="container p-3 my-3 border">
         <h1>Knooppunten</h1>
-        <h2>Handleiding</h2>
-        <p>
-            Deze webapplicatie dient om een fietsroute gemaakt op een externe website (als .gpx bestand), om te zetten naar een navigatie via google maps, zodat je snel én makkelijk een rondje kan gaan fietsen!
-        </p>
-        <h3>Stap 1: Het .gpx bestand</h3>
-        <p>
-            Ga naar <a href="https://www.visitlimburg.be/nl/fietsrouteplanner" target="_blank">de fietsrouteplanner van visitlimburg.be</a> en maak een route. Je kan een route maken door eerst een startknooppunt te selecteren en vervolgens een eindknooppunt. Je kan de route ook wijzigen, omdraaien etc. door wat met de knoppen te spelen en zelf wat te proberen. De route kan als .gpx bestand gedownload worden door op de eerste grijze knop linksbovenaan (Download GPX-bestand) te drukken. Sla dit bestand tijdelijk op op uw computer.
-        </p>
-        <h3>Stap 2: De route maken</h3>
-        <p>
-            Klik op de knop 'Bestand kiezen' hieronder, selecteer uw net gedownloadde .gpx bestand en klik dan op de 'Bevestig' knop.
-        </p>
-        <h3>Stap 3: Vertrekken maar!</h3>
-        <p>
-            U kan op de knoppen 'Route' en 'Omgekeerde route' klikken om uw route te bekijken. U kan ook de routes naar uw klembord kopiëren d.m.v. de 'Kopieer' knop. Als u de google maps links op uw telefoon wil gebruiken dient u de gekopieerde tekst naar uw telefoon te sturen. Dit kan bijvoorbeeld via Messenger, of als uw android telefoon en uw google accounts verbonden zijn, verschijnt er op google maps een handige knop 'Route verzenden naar je telefoon'. Veel plezier met de trip!
-        </p>
-        {% block content %}
-        {% endblock %}
+        <div class="row">
+            <div class="col-sm-7">
+                <h2>Handleiding</h2>
+                <p>
+                    Deze webapplicatie dient om een fietsroute gemaakt op een externe website (als .gpx bestand), om te zetten naar een navigatie via google maps, zodat je snel én makkelijk een rondje kan gaan fietsen!
+                </p>
+                <h3>Stap 1: Het .gpx bestand</h3>
+                <p>
+                    Ga naar <a href="https://www.visitlimburg.be/nl/fietsrouteplanner" target="_blank">de fietsrouteplanner van visitlimburg.be</a> en maak een route. Je kan een route maken door eerst een startknooppunt te selecteren en vervolgens een eindknooppunt. Je kan de route ook wijzigen, omdraaien etc. door wat met de knoppen te spelen en zelf wat te proberen. De route kan als .gpx bestand gedownload worden door op de eerste grijze knop linksbovenaan (Download GPX-bestand) te drukken. Sla dit bestand tijdelijk op op uw computer.
+                </p>
+                <h3>Stap 2: De route maken</h3>
+                <p>
+                    Klik op de knop 'Bestand kiezen' hieronder, selecteer uw net gedownloadde .gpx bestand en klik dan op de 'Bevestig' knop.
+                </p>
+                <h3>Stap 3: Vertrekken maar!</h3>
+                <p>
+                    U kan op de knoppen 'Route' en 'Omgekeerde route' klikken om uw route te bekijken. U kan ook de routes naar uw klembord kopiëren d.m.v. de 'Kopieer' knop. Als u de google maps links op uw telefoon wil gebruiken dient u de gekopieerde tekst naar uw telefoon te sturen. Dit kan bijvoorbeeld via Messenger, of als uw android telefoon en uw google accounts verbonden zijn, verschijnt er op google maps een handige knop 'Route verzenden naar je telefoon'. Veel plezier met de trip!
+                </p>
+            </div>
+            <div class="col-sm-5">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
         <footer>
             <p>&copy; Sander Vanderlinden</p>
             <span>
