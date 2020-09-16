@@ -7,8 +7,46 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     </head>
     <body>
+        <h1>Knooppunten</h1>
+        <h2>Handleiding</h2>
+        <p>
+            Deze webapplicatie dient om een fietsroute gemaakt op een externe website (als .gpx bestand), om te zetten naar een navigatie via google maps, zodat je snel én makkelijk een rondje kan gaan fietsen!
+            </p>
+        <h3>Stap 1: Het .gpx bestand</h3>
+        <p>
+            Ga naar <a href="https://www.visitlimburg.be/nl/fietsrouteplanner" target="_blank">de fietsrouteplanner van visitlimburg.be</a> en maak een route. Je kan een route maken door eerst een startknooppunt te selecteren en vervolgens een eindknooppunt. Je kan de route ook wijzigen, omdraaien etc. door wat met de knoppen te spelen en zelf wat te proberen. De route kan als .gpx bestand gedownload worden door op de eerste grijze knop linksbovenaan (Download GPX-bestand) te drukken. Sla dit bestand tijdelijk op op uw computer.
+        </p>
+        <h3>Stap 2: De route maken</h3>
+        <p>
+            Klik op de knop 'Bestand kiezen' hieronder, selecteer uw net gedownloadde .gpx bestand en klik dan op de 'Bevestig' knop.
+        </p>
+        <h3>Stap 3: Vertrekken maar!</h3>
+        <p>
+            U kan op de knoppen 'Route' en 'Omgekeerde route' klikken om uw route te bekijken. U kan ook de routes naar uw klembord kopiëren d.m.v. de 'Kopieer' knop. Als u de google maps links op uw telefoon wil gebruiken dient u de gekopieerde tekst naar uw telefoon te sturen. Dit kan bijvoorbeeld via Messenger, of als uw android telefoon en uw google accounts verbonden zijn, verschijnt er op google maps een handige knop 'Route verzenden naar je telefoon'. Veel plezier met de trip!
+        </p>
         {% block content %}
         {% endblock %}
+        <footer>
+            <p>&copy; Sander Vanderlinden</p>
+            <span>
+                <a href="https://www.linkedin.com/in/sander-vanderlinden">
+                    <img src="{{ url_for('static', filename='images/linkedin-icon.svg') }}"
+                        alt="LinkedIn icon"
+                        height="32px"
+                    >
+                    LinkedIn
+                </a>
+            </span>
+            <span>
+                <a href="https://github.com/SanderVanderlinden">
+                    <img src="{{ url_for('static', filename='images/GitHub-Mark-32px.png') }}"
+                        alt="GitHub Mark"
+                        height="32px"
+                    >
+                    GitHub
+                </a>
+            </span>
+    </footer>
     </body>
     <script src="{{ url_for('static', filename='js/copy_to_clipboard.js') }}"></script>
 </html>
