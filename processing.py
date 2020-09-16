@@ -13,9 +13,19 @@ def maak_route(input_data):
         link_van_naar += "&waypoints={}".format("|".join(route[1:-1]))
     link_van_naar += "&destination={}".format(route[-1])
 
+    link_van_naar_mijn_locatie = "{}".format(link)
+    if len(route) > 1:
+        link_van_naar_mijn_locatie += "&waypoints={}".format("|".join(route[0:-1]))
+    link_van_naar_mijn_locatie += "&destination={}".format(route[-1])
+
     link_naar_van = "{}&origin={}".format(link, route[-1])
     if len(route) > 2:
         link_naar_van += "&waypoints={}".format("|".join(route[-2:0:-1]))
     link_naar_van += "&destination={}".format(route[0])
 
-    return (link_van_naar, link_naar_van)
+    link_naar_van_mijn_locatie = "{}".format(link)
+    if len(route) > 1:
+        link_naar_van_mijn_locatie += "&waypoints={}".format("|".join(route[-1:0:-1]))
+    link_naar_van_mijn_locatie += "&destination={}".format(route[0])
+
+    return (link_van_naar, link_naar_van, link_van_naar_mijn_locatie, link_naar_van_mijn_locatie)

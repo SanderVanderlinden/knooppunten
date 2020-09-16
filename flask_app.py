@@ -25,7 +25,12 @@ def knooppunten():
              return render_template("knooppunten-get.html", error = "Gelieve een .gpx bestand mee te geven!")
 
         input_data = input_file.stream.read().decode("ISO-8859-1")
-        (link_van_naar, link_naar_van) = maak_route(input_data)
-        return render_template("knooppunten-post.html", link_van_naar = link_van_naar, link_naar_van = link_naar_van)
+        (link_van_naar, link_naar_van, link_van_naar_mijn_locatie, link_naar_van_mijn_locatie) = maak_route(input_data)
+        return render_template("knooppunten-post.html",
+            link_van_naar = link_van_naar,
+            link_naar_van = link_naar_van,
+            link_van_naar_mijn_locatie = link_van_naar_mijn_locatie,
+            link_naar_van_mijn_locatie = link_naar_van_mijn_locatie
+        )
 
     return render_template("knooppunten-get.html")

@@ -1,9 +1,11 @@
 <!doctype html>
-<html>
+<html lang="en">
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}{% endblock %}</title>
-        <link rel="shortcut icon" href="">
         <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon/favicon.ico') }}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     </head>
     <body>
@@ -11,7 +13,7 @@
         <h2>Handleiding</h2>
         <p>
             Deze webapplicatie dient om een fietsroute gemaakt op een externe website (als .gpx bestand), om te zetten naar een navigatie via google maps, zodat je snel én makkelijk een rondje kan gaan fietsen!
-            </p>
+        </p>
         <h3>Stap 1: Het .gpx bestand</h3>
         <p>
             Ga naar <a href="https://www.visitlimburg.be/nl/fietsrouteplanner" target="_blank">de fietsrouteplanner van visitlimburg.be</a> en maak een route. Je kan een route maken door eerst een startknooppunt te selecteren en vervolgens een eindknooppunt. Je kan de route ook wijzigen, omdraaien etc. door wat met de knoppen te spelen en zelf wat te proberen. De route kan als .gpx bestand gedownload worden door op de eerste grijze knop linksbovenaan (Download GPX-bestand) te drukken. Sla dit bestand tijdelijk op op uw computer.
@@ -47,6 +49,9 @@
                 </a>
             </span>
     </footer>
-    </body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="{{ url_for('static', filename='js/copy_to_clipboard.js') }}"></script>
+    </body>
 </html>
