@@ -2,7 +2,7 @@
 
 {% block title %}Knooppunten{% endblock %}
 
-{% block content %}
+{% block upload_file %}
     <p>Selecteer een .gpx bestand</p>
     <form method="post" action="/knooppunten" enctype="multipart/form-data">
         <p><input type="file" name="input_file" accept=".gpx"/></p>
@@ -13,14 +13,12 @@
             <li><a href="{{link_van_naar_mijn_locatie}}" target="_blank">Route (Start op uw locatie)</a></li>
             <li><a href="{{link_naar_van_mijn_locatie}}" target="_blank">Omgekeerde route (Start op uw locatie)</a></li>
         </ul>
-
-        <textarea rows="10" cols="100" id="copy-to-clipboard" readonly>Route:&#13;&#10;{{link_van_naar}}&#13;&#10;&#13;&#10;Omgekeerde route:&#13;&#10;{{link_naar_van}}&#13;&#10;&#13;&#10;Route (Start op uw locatie):&#13;&#10;{{link_van_naar_mijn_locatie}}&#13;&#10;&#13;&#10;Omgekeerde route (Start op uw locatie):&#13;&#10;{{link_naar_van_mijn_locatie}}</textarea>
-
-        <div class="tooltip">
-            <div onclick="myCopyFunction()">
-                <span class="tooltiptext" id="myTooltip">Kopieer deze tekst naar het klembord</span>
-                Kopieer routes naar klembord
-            </div>
-        </div>
     </form>
+    <textarea id="copy-to-clipboard" readonly>Route:&#13;&#10;{{link_van_naar}}&#13;&#10;&#13;&#10;Omgekeerde route:&#13;&#10;{{link_naar_van}}&#13;&#10;&#13;&#10;Route (Start op uw locatie):&#13;&#10;{{link_van_naar_mijn_locatie}}&#13;&#10;&#13;&#10;Omgekeerde route (Start op uw locatie):&#13;&#10;{{link_naar_van_mijn_locatie}}</textarea>
+    <div class="tooltip">
+        <button onclick="myCopyFunction()">
+            <span class="tooltiptext" id="myTooltip">Kopieer deze tekst naar het klembord</span>
+            Kopieer routes naar klembord
+        </button>
+    </div>
 {% endblock %}

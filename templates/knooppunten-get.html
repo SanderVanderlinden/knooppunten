@@ -2,8 +2,10 @@
 
 {% block title %}Knooppunten{% endblock %}
 
-{% block content %}
-    <p>{{ error }}</p>
+{% block upload_file %}
+    <div class="alert alert-warning">
+        <strong>{{ error }}</strong>
+    </div>
     <p>Selecteer een .gpx bestand</p>
     <form method="post" action="/knooppunten" enctype="multipart/form-data">
         <p><input type="file" name="input_file" accept=".gpx"/></p>
