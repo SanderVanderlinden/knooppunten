@@ -43,3 +43,24 @@
 #dont-click-button:hover {
   background-color: pink;
 }
+
+.custom-file-input ~ .custom-file-label::after {
+    content: "Zoek";
+    color: #ffffff;
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    }
+
+.custom-file-label{
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+
+#copy-to-clipboard{
+  visibility: hidden;
+}
+
+.full-width{
+  width:100%;
+  border-color:white;
+}

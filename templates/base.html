@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="nl">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,30 +13,29 @@
         <h2>Handleiding</h2>
         <p>Met deze website kan u een route van fietsknooppunten maken en de bijbehorende navigatie laten doen door <a href="https://www.google.com/maps/" target="_blank">Google Maps</a>, zodat je snel én makkelijk een rondje kan gaan fietsen!</p>
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-md-4">
                 <h3>Stap 1: Maak een route</h3>
                 <p>Ga naar <a href="https://www.visitlimburg.be/nl/fietsrouteplanner" target="_blank">de fietsrouteplanner</a> en maak een route. U kan instructies op de website vinden en eens rondkijken naar de interessante routes die <a href="https://www.visitlimburg.be/nl/zoek-fietsroutes" target="_blank">visitlimburg.be</a> nog te bieden heeft.</p>
                 <p>U kan een route maken door eerst een startknooppunt te selecteren en vervolgens een eindknooppunt. U kan de route nadien nog wijzigen door wat met de knoppen te spelen totdat deze u bevalt.</p>
                 <p>Wanneer u tevreden bent downloadt u de route als .gpx bestand, door op de download knop <img src="{{ url_for('static', filename='images/download_gpx_knop.PNG') }}" class="text_heigth" alt="(Download GPX-bestand)"> te drukken. Sla dit bestand tijdelijk op op uw computer of smartphone.</p>
             </div>
-            <div class="col-sm-5">
+            <div class="col-md-5">
                 <h3>Stap 2: Verwerk het .gpx bestand</h3>
-                <p>Klik op de knop 'Bestand kiezen' hieronder, selecteer uw net gedownloadde .gpx bestand en klik dan op de 'Bevestig' knop.</p>
+                <p>Klik op de knop 'Upload' hieronder, selecteer uw net gedownloadde .gpx bestand en klik dan op de 'Bevestig' knop.</p>
                 {% block file_error %}
                 {% endblock %}
-                <p class="text-primary">Selecteer een .gpx bestand</p>
+                <p class="text-info">Selecteer een .gpx bestand</p>
                 <form method="post" action="/knooppunten" enctype="multipart/form-data">
-                    <p><input type="file" name="input_file" accept=".gpx" class="btn btn-primary"/></p>
                     <div class="custom-file mb-3">
-                        <input type="file" class="custom-file-input" id="customFile" name="filename">
-                        <label class="custom-file-label" for="customFile">Choose file</label>
+                        <input type="file" name="input_file" accept=".gpx" class="custom-file-input" id="customFile">
+                        <label class="custom-file-label" for="customFile">Geen bestand gekozen...</label>
                     </div>
                     <p><input type="submit" value="Bevestig" class="btn btn-secondary"/></p>
                 </form>
                 {% block uploaded_file %}
                 {% endblock %}
             </div>
-            <div class="col-sm-3">
+            <div class="col-md-3">
                 <h3>Stap 3: Vertrekken</h3>
                 <p>U kan op de knoppen 'Route' en 'Omgekeerde route' klikken om uw route te bekijken. U kan ook de routes naar uw klembord kopiëren d.m.v. de 'Kopieer' knop. Als u de google maps links op uw telefoon wil gebruiken dient u de gekopieerde tekst naar uw telefoon te sturen. Dit kan bijvoorbeeld via Messenger, of als uw android telefoon en uw google accounts verbonden zijn, verschijnt er op google maps een handige knop 'Route verzenden naar je telefoon'. Veel plezier met de trip!</p>
                 <button id="dont-click-button" onclick="dontClickFunction()">Hier niet klikken!</button>
