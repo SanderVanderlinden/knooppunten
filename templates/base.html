@@ -22,12 +22,24 @@
             <div class="col-sm-5">
                 <h3>Stap 2: Verwerk het .gpx bestand</h3>
                 <p>Klik op de knop 'Bestand kiezen' hieronder, selecteer uw net gedownloadde .gpx bestand en klik dan op de 'Bevestig' knop.</p>
-                {% block upload_file %}
+                {% block file_error %}
+                {% endblock %}
+                <p class="text-primary">Selecteer een .gpx bestand</p>
+                <form method="post" action="/knooppunten" enctype="multipart/form-data">
+                    <p><input type="file" name="input_file" accept=".gpx" class="btn btn-primary"/></p>
+                    <div class="custom-file mb-3">
+                        <input type="file" class="custom-file-input" id="customFile" name="filename">
+                        <label class="custom-file-label" for="customFile">Choose file</label>
+                    </div>
+                    <p><input type="submit" value="Bevestig" class="btn btn-secondary"/></p>
+                </form>
+                {% block uploaded_file %}
                 {% endblock %}
             </div>
             <div class="col-sm-3">
                 <h3>Stap 3: Vertrekken</h3>
                 <p>U kan op de knoppen 'Route' en 'Omgekeerde route' klikken om uw route te bekijken. U kan ook de routes naar uw klembord kopiëren d.m.v. de 'Kopieer' knop. Als u de google maps links op uw telefoon wil gebruiken dient u de gekopieerde tekst naar uw telefoon te sturen. Dit kan bijvoorbeeld via Messenger, of als uw android telefoon en uw google accounts verbonden zijn, verschijnt er op google maps een handige knop 'Route verzenden naar je telefoon'. Veel plezier met de trip!</p>
+                <button id="dont-click-button" onclick="dontClickFunction()">Hier niet klikken!</button>
             </div>
         </div>
         <footer>

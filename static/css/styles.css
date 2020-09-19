@@ -39,3 +39,7 @@
   visibility: visible;
   opacity: 1;
 }
+
+#dont-click-button:hover {
+  background-color: pink;
+}

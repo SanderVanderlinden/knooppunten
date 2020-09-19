@@ -2,13 +2,12 @@
 
 {% block title %}Knooppunten{% endblock %}
 
-{% block upload_file %}
-    <div class="alert alert-warning">
-        <strong>{{ error }}</strong>
-    </div>
-    <p>Selecteer een .gpx bestand</p>
-    <form method="post" action="/knooppunten" enctype="multipart/form-data">
-        <p><input type="file" name="input_file" accept=".gpx"/></p>
-        <p><input type="submit" value="Bevestig" /></p>
-    </form>
+{% block file_error %}
+    {% if error is defined %}
+        <div class="alert alert-warning">
+            <strong>{{ error }}</strong>
+        </div>
+    {% endif %}
 {% endblock %}
+
+
