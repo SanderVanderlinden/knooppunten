@@ -1,10 +1,10 @@
 function myCopyFunction() {
     var copyText = document.getElementById("copy-to-clipboard");
-    copyText.style.visibility = "visible";
+    copyText.style.display = "block";
     copyText.select();
     copyText.setSelectionRange(0, 99999)
     document.execCommand("copy");
-    copyText.style.visibility = "hidden";
+    copyText.style.display = "none";
 }
 
 function dontClickFunction() {

@@ -4,31 +4,35 @@
 
 {% block uploaded_file %}
     <div>
+        <span class="badge badge-info">{{ filename }}</span>
         <div class="row">
-            <div class="col-xl-3">
+            <div class="col-xl-12">
                 <span class="badge badge-light">Route vanaf</span>
             </div>
-            <div class="col-xl-4">
+            <div class="col-xl-6">
                 <a href="{{link_van_naar}}" target="_blank" class="btn btn-secondary btn-lg full-width" role="button">Startpunt</a>
             </div>
-            <div class="col-xl-4">
+            <div class="col-xl-6">
                 <a href="{{link_naar_van}}" target="_blank" class="btn btn-secondary btn-lg full-width" role="button">Uw locatie</a>
             </div>
         </div>
         <div class="row">
-            <div class="col-xl-3">
+            <div class="col-xl-12">
                 <span class="badge badge-light">Omgekeerde route vanaf</span>
             </div>
-            <div class="col-xl-4">
+            <div class="col-xl-6">
                 <a href="{{link_van_naar_mijn_locatie}}" target="_blank" class="btn btn-secondary btn-lg full-width" role="button">Eindpunt</a>
             </div>
-            <div class="col-xl-4">
+            <div class="col-xl-6">
                 <a href="{{link_naar_van_mijn_locatie}}" target="_blank" class="btn btn-secondary btn-lg full-width" role="button">Uw locatie</a>
             </div>
         </div>
     </div>
     <textarea id="copy-to-clipboard" readonly>Route:&#13;&#10;{{link_van_naar}}&#13;&#10;&#13;&#10;Omgekeerde route:&#13;&#10;{{link_naar_van}}&#13;&#10;&#13;&#10;Route (Start op uw locatie):&#13;&#10;{{link_van_naar_mijn_locatie}}&#13;&#10;&#13;&#10;Omgekeerde route (Start op uw locatie):&#13;&#10;{{link_naar_van_mijn_locatie}}</textarea>
     <div>
-        <button onclick="myCopyFunction()">Kopieer routes naar klembord</button>
+        <button class="btn btn-info btn-sm" id="copy-button" onclick="myCopyFunction()">
+            Kopieer routes naar klembord
+        </button>
     </div>
+</div>
 {% endblock %}

@@ -2,50 +2,12 @@
     height: 1.25em;
 }
 
-.tooltip {
-  position: relative;
-  display: inline-block;
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 140px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px;
-  position: absolute;
-  z-index: 1;
-  bottom: 150%;
-  left: 50%;
-  margin-left: -75px;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.tooltip .tooltiptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
-}
-
 #dont-click-button:hover {
   background-color: pink;
 }
 
 .custom-file-input ~ .custom-file-label::after {
-    content: "Zoek";
+    content: "Upload";
     color: #ffffff;
     background-color: var(--secondary);
     border-color: var(--secondary);
@@ -57,7 +19,13 @@
 }
 
 #copy-to-clipboard{
-  visibility: hidden;
+  display:none;
+}
+
+#copy-button{
+    margin-top: 0.75em;
+    width: 100%;
+    font-weight:600;
 }
 
 .full-width{

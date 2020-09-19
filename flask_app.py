@@ -30,7 +30,8 @@ def knooppunten():
             link_van_naar = link_van_naar,
             link_naar_van = link_naar_van,
             link_van_naar_mijn_locatie = link_van_naar_mijn_locatie,
-            link_naar_van_mijn_locatie = link_naar_van_mijn_locatie
+            link_naar_van_mijn_locatie = link_naar_van_mijn_locatie,
+            filename = input_file.filename
         )
 
     return render_template("knooppunten-get.html")
