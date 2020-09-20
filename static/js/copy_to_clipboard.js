@@ -7,6 +7,18 @@ function myCopyFunction() {
     copyText.style.display = "none";
 }
 
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+
+$('[data-toggle="popover"]').click(function () {
+
+	setTimeout(function () {
+		$('.popover').fadeOut('slow');
+	}, 3000);
+
+});
+
 function dontClickFunction() {
     document.getElementsByTagName("BODY")[0].style.backgroundColor = "pink";
     var dontClickButton = document.getElementById("dont-click-button");

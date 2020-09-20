@@ -12,7 +12,7 @@ def navigation():
 
 
     <p>
-    ideeën: uitleg, link naar mijn git en linkedin + wa nice css (bootstrap?), send via messenger
+    ideeën: uitleg, link naar mijn git en linkedin + wa nice css (bootstrap?), send via messenger, vertrek vanaf: startpunt of uw locatie, bestemming: eindpunt, kies een locatie, omgekeerde route?
     </p>
     '''
 
