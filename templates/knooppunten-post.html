@@ -8,23 +8,58 @@
         <div>
             <div class="row">
             	<div class="col-xl-12">
-                    <label for="myCheck">Start route vanaf uw locatie</label>
-                    <input type="checkbox" id="checkStart" onclick="showRoute()">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="checkStart" onclick="showRoute()">
+                        <label class="custom-control-label" for="checkStart">Start route vanaf uw locatie</label>
+                    </div>
                 </div>
             </div>
             <div class="row">
             	<div class="col-xl-12">
-                    <label for="myCheck">Kies uw bestemming</label>
-                    <input type="checkbox" id="checkEnd" onclick="showRoute()">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="checkEnd" onclick="showRoute()">
+                        <label class="custom-control-label" for="checkEnd">Kies uw bestemming</label>
+                    </div>
                 </div>
             </div>
             <div class="row">
             	<div class="col-xl-12">
-                    <label for="myCheck">Omgekeerde route</label>
-                    <input type="checkbox" id="checkReverse" onclick="showRoute()">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="checkReverse" onclick="showRoute()">
+                        <label class="custom-control-label" for="checkReverse">Omgekeerde route</label>
+                    </div>
                 </div>
             </div>
         </div>
+        <!--<div class="checkbox-container">
+            <div class="row">
+            	<div class="col-xl-12">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" id="checkStart" onclick="showRoute()"
+                            data-toggle="toggle" data-size="sm"  data-onstyle="info" data-offstyle="outline-info" data-on="Aan" data-off="Uit">
+                        <label for="checkStart">Start route vanaf uw locatie</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+            	<div class="col-xl-12">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" id="checkEnd" onclick="showRoute()"
+                            data-toggle="toggle" data-size="sm"  data-onstyle="info" data-offstyle="outline-info" data-on="Aan" data-off="Uit">
+                        <label for="checkEnd">Kies uw bestemming</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+            	<div class="col-xl-12">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" id="checkReverse" onclick="showRoute()"
+                            data-toggle="toggle" data-size="sm"  data-onstyle="info" data-offstyle="outline-info" data-on="Aan" data-off="Uit">
+                        <label for="checkReverse">Omgekeerde route</label>
+                    </div>
+                </div>
+            </div>
+        </div>-->
         <div>
             <div class="row">
             	<div class="col-xl-12">
@@ -68,15 +103,7 @@
             </div>
         </div>
     </div>
-    <textarea id="copy-route" readonly>Route:&#13;&#10;{{link_van_naar}}&#13;&#10;
-        &#13;&#10;Route (Start op uw locatie):&#13;&#10;{{link_van_naar_mijn_locatie}}&#13;&#10;
-        &#13;&#10;Route (Kies bestemming):&#13;&#10;{{link_van_naar_kies_bestemming}}&#13;&#10;
-        &#13;&#10;Route (Start op uw locatie en kies bestemming):&#13;&#10;{{link_van_naar_mijn_locatie_kies_bestemming}}&#13;&#10;
-        &#13;&#10;Omgekeerde route:&#13;&#10;{{link_naar_van}}&#13;&#10;
-        &#13;&#10;Omgekeerde route (Start op uw locatie):&#13;&#10;{{link_naar_van_mijn_locatie}}&#13;&#10;
-        &#13;&#10;Omgekeerde route (Kies bestemming)&#13;&#10;{{link_naar_van_kies_bestemming}}&#13;&#10;
-        &#13;&#10;Omgekeerde route (Start op uw locatie en kies bestemming)&#13;&#10;{{link_naar_van_mijn_locatie_kies_bestemming}}&#13;&#10;
-    </textarea>
+    <textarea id="copyRoute" readonly></textarea>
     <div class="row">
         <div class="col-xl-6">
             <button class="btn btn-info btn-sm copy-button" onclick="myCopyFunction()" data-toggle="popover" data-placement="bottom" data-content="De route is gekopieerd naar het klembord!">
