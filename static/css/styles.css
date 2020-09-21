@@ -37,4 +37,6 @@
 
 .checkbox-container{
     margin-left: -36px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }

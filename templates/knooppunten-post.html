@@ -5,12 +5,13 @@
 {% block uploaded_file %}
     <div>
         <span class="badge badge-info">{{ filename }}</span>
-        <div>
+        <!--<div>
             <div class="row">
             	<div class="col-xl-12">
                     <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" id="checkStart" onclick="showRoute()">
-                        <label class="custom-control-label" for="checkStart">Start route vanaf uw locatie</label>
+                        <input type="checkbox" id="checkStart" onclick="showRoute()"
+                            data-toggle="toggle" data-size="sm"  data-onstyle="info" data-offstyle="outline-info" data-on="Aan" data-off="Uit">
+                        <label for="checkStart">Start route vanaf uw locatie</label>
                     </div>
                 </div>
             </div>
@@ -30,8 +31,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <!--<div class="checkbox-container">
+        </div>-->
+        <div class="checkbox-container">
             <div class="row">
             	<div class="col-xl-12">
                     <div class="custom-control custom-switch">
@@ -59,7 +60,7 @@
                     </div>
                 </div>
             </div>
-        </div>-->
+        </div>
         <div>
             <div class="row">
             	<div class="col-xl-12">

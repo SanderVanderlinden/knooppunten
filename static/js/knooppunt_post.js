@@ -17,6 +17,10 @@ $('[data-toggle="popover"]').click(function () {
 
 });
 
+$('#checkStart').change(showRoute);
+$('#checkEnd').change(showRoute);
+$('#checkReverse').change(showRoute);
+
 function showRoute() {
     var start = document.getElementById("checkStart");
     var end = document.getElementById("checkEnd");
