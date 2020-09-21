@@ -10,7 +10,6 @@ def navigation():
     <a href="http://sandervanderlinden.pythonanywhere.com/">Home</a>
     <a href="http://sandervanderlinden.pythonanywhere.com/knooppunten">Knooppunten</a>
 
-
     <p>
     ideeën: uitleg, link naar mijn git en linkedin + wa nice css (bootstrap?), send via messenger, vertrek vanaf: startpunt of uw locatie, bestemming: eindpunt, kies een locatie, omgekeerde route?
     </p>
@@ -25,12 +24,24 @@ def knooppunten():
              return render_template("knooppunten-get.html", error = "Gelieve een .gpx bestand mee te geven!")
 
         input_data = input_file.stream.read().decode("ISO-8859-1")
-        (link_van_naar, link_naar_van, link_van_naar_mijn_locatie, link_naar_van_mijn_locatie) = maak_route(input_data)
+        (link_van_naar,
+        link_van_naar_mijn_locatie,
+        link_van_naar_kies_bestemming,
+        link_van_naar_mijn_locatie_kies_bestemming,
+        link_naar_van,
+        link_naar_van_mijn_locatie,
+        link_naar_van_kies_bestemming,
+        link_naar_van_mijn_locatie_kies_bestemming
+        ) = maak_route(input_data)
         return render_template("knooppunten-post.html",
             link_van_naar = link_van_naar,
-            link_naar_van = link_naar_van,
             link_van_naar_mijn_locatie = link_van_naar_mijn_locatie,
+            link_van_naar_kies_bestemming = link_van_naar_kies_bestemming,
+            link_van_naar_mijn_locatie_kies_bestemming = link_van_naar_mijn_locatie_kies_bestemming,
+            link_naar_van = link_naar_van,
             link_naar_van_mijn_locatie = link_naar_van_mijn_locatie,
+            link_naar_van_kies_bestemming = link_naar_van_kies_bestemming,
+            link_naar_van_mijn_locatie_kies_bestemming = link_naar_van_mijn_locatie_kies_bestemming,
             filename = input_file.filename
         )
 

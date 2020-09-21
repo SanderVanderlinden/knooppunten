@@ -5,33 +5,94 @@
 {% block uploaded_file %}
     <div>
         <span class="badge badge-info">{{ filename }}</span>
-        <div class="row">
-            <div class="col-xl-12">
-                <span class="badge badge-light">Route vanaf</span>
+        <div>
+            <div class="row">
+            	<div class="col-xl-12">
+                    <label for="myCheck">Start route vanaf uw locatie</label>
+                    <input type="checkbox" id="checkStart" onclick="showRoute()">
+                </div>
             </div>
-            <div class="col-xl-6">
-                <a href="{{link_van_naar}}" target="_blank" class="btn btn-secondary btn-lg full-width" role="button">Startpunt</a>
+            <div class="row">
+            	<div class="col-xl-12">
+                    <label for="myCheck">Kies uw bestemming</label>
+                    <input type="checkbox" id="checkEnd" onclick="showRoute()">
+                </div>
             </div>
-            <div class="col-xl-6">
-                <a href="{{link_naar_van}}" target="_blank" class="btn btn-secondary btn-lg full-width" role="button">Uw locatie</a>
+            <div class="row">
+            	<div class="col-xl-12">
+                    <label for="myCheck">Omgekeerde route</label>
+                    <input type="checkbox" id="checkReverse" onclick="showRoute()">
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-xl-12">
-                <span class="badge badge-light">Omgekeerde route vanaf</span>
+        <div>
+            <div class="row">
+            	<div class="col-xl-12">
+            		<a href="{{link_van_naar}}" id="link_van_naar" target="_blank" class="btn btn-secondary btn-lg full-width" role="button">Route</a>
+            	</div>
             </div>
-            <div class="col-xl-6">
-                <a href="{{link_van_naar_mijn_locatie}}" target="_blank" class="btn btn-secondary btn-lg full-width" role="button">Eindpunt</a>
+            <div class="row">
+            	<div class="col-xl-12">
+            		<a href="{{link_van_naar_mijn_locatie}}" id="link_van_naar_mijn_locatie" target="_blank" class="btn btn-secondary btn-lg full-width" role="button">Route vanaf uw locatie</a>
+            	</div>
             </div>
-            <div class="col-xl-6">
-                <a href="{{link_naar_van_mijn_locatie}}" target="_blank" class="btn btn-secondary btn-lg full-width" role="button">Uw locatie</a>
+            <div class="row">
+            	<div class="col-xl-12">
+            		<a href="{{link_van_naar_kies_bestemming}}" id="link_van_naar_kies_bestemming" target="_blank" class="btn btn-secondary btn-lg full-width" role="button">Route met te kiezen bestemming</a>
+            	</div>
+            </div>
+            <div class="row">
+            	<div class="col-xl-12">
+            		<a href="{{link_van_naar_mijn_locatie_kies_bestemming}}" id="link_van_naar_mijn_locatie_kies_bestemming" target="_blank" class="btn btn-secondary btn-lg full-width" role="button">Route vanaf uw locatie met te kiezen bestemming</a>
+            	</div>
+            </div>
+            <div class="row">
+            	<div class="col-xl-12">
+            		<a href="{{link_naar_van}}" id="link_naar_van" target="_blank" class="btn btn-secondary btn-lg full-width" role="button">Omgekeerde route</a>
+            	</div>
+            </div>
+            <div class="row">
+            	<div class="col-xl-12">
+            		<a href="{{link_naar_van_mijn_locatie}}" id="link_naar_van_mijn_locatie" target="_blank" class="btn btn-secondary btn-lg full-width" role="button">Omgekeerde route vanaf uw locatie</a>
+            	</div>
+            </div>
+            <div class="row">
+            	<div class="col-xl-12">
+            		<a href="{{link_naar_van_kies_bestemming}}" id="link_naar_van_kies_bestemming" target="_blank" class="btn btn-secondary btn-lg full-width" role="button">Omgekeerde route met te kiezen bestemming</a>
+            	</div>
+            </div>
+            <div class="row">
+            	<div class="col-xl-12">
+            		<a href="{{link_naar_van_mijn_locatie_kies_bestemming}}" id="link_naar_van_mijn_locatie_kies_bestemming" target="_blank" class="btn btn-secondary btn-lg full-width" role="button">Omgekeerde route vanaf uw locatie met te kiezen bestemming</a>
+            	</div>
             </div>
         </div>
     </div>
-    <textarea id="copy-to-clipboard" readonly>Route:&#13;&#10;{{link_van_naar}}&#13;&#10;&#13;&#10;Omgekeerde route:&#13;&#10;{{link_naar_van}}&#13;&#10;&#13;&#10;Route (Start op uw locatie):&#13;&#10;{{link_van_naar_mijn_locatie}}&#13;&#10;&#13;&#10;Omgekeerde route (Start op uw locatie):&#13;&#10;{{link_naar_van_mijn_locatie}}</textarea>
-    <div>
-        <button class="btn btn-info btn-sm" id="copy-button" onclick="myCopyFunction()" data-toggle="popover" data-placement="bottom" data-content="De routes zijn gekopieerd naar het klembord!">
-            Kopieer routes naar klembord
-        </button>
+    <textarea id="copy-route" readonly>Route:&#13;&#10;{{link_van_naar}}&#13;&#10;
+        &#13;&#10;Route (Start op uw locatie):&#13;&#10;{{link_van_naar_mijn_locatie}}&#13;&#10;
+        &#13;&#10;Route (Kies bestemming):&#13;&#10;{{link_van_naar_kies_bestemming}}&#13;&#10;
+        &#13;&#10;Route (Start op uw locatie en kies bestemming):&#13;&#10;{{link_van_naar_mijn_locatie_kies_bestemming}}&#13;&#10;
+        &#13;&#10;Omgekeerde route:&#13;&#10;{{link_naar_van}}&#13;&#10;
+        &#13;&#10;Omgekeerde route (Start op uw locatie):&#13;&#10;{{link_naar_van_mijn_locatie}}&#13;&#10;
+        &#13;&#10;Omgekeerde route (Kies bestemming)&#13;&#10;{{link_naar_van_kies_bestemming}}&#13;&#10;
+        &#13;&#10;Omgekeerde route (Start op uw locatie en kies bestemming)&#13;&#10;{{link_naar_van_mijn_locatie_kies_bestemming}}&#13;&#10;
+    </textarea>
+    <div class="row">
+        <div class="col-xl-6">
+            <button class="btn btn-info btn-sm copy-button" onclick="myCopyFunction()" data-toggle="popover" data-placement="bottom" data-content="De route is gekopieerd naar het klembord!">
+                Kopieer route
+            </button>
+        </div>
+        <div class="col-xl-6">
+            <button class="btn btn-info btn-sm copy-button" onclick="myCopyFunctionAll()" data-toggle="popover" data-placement="bottom" data-content="De routes zijn gekopieerd naar het klembord!">
+                Kopieer alle routes
+            </button>
+        </div>
     </div>
 {% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/knooppunt_post.js') }}"></script>
+{% endblock %}
+
+
