@@ -26,56 +26,47 @@ function showRoute() {
     var end = document.getElementById("checkEnd");
     var reverse = document.getElementById("checkReverse");
 
-    var link_van_naar = document.getElementById("link_van_naar");
-    var link_van_naar_mijn_locatie = document.getElementById("link_van_naar_mijn_locatie");
-    var link_van_naar_kies_bestemming = document.getElementById("link_van_naar_kies_bestemming");
-    var link_van_naar_mijn_locatie_kies_bestemming = document.getElementById("link_van_naar_mijn_locatie_kies_bestemming");
-    var link_naar_van = document.getElementById("link_naar_van");
-    var link_naar_van_mijn_locatie = document.getElementById("link_naar_van_mijn_locatie");
-    var link_naar_van_kies_bestemming = document.getElementById("link_naar_van_kies_bestemming");
-    var link_naar_van_mijn_locatie_kies_bestemming = document.getElementById("link_naar_van_mijn_locatie_kies_bestemming");
-
-    link_van_naar.style.display = "none";
-    link_van_naar_mijn_locatie.style.display = "none";
-    link_van_naar_kies_bestemming.style.display = "none";
-    link_van_naar_mijn_locatie_kies_bestemming.style.display = "none";
-    link_naar_van.style.display = "none";
-    link_naar_van_mijn_locatie.style.display = "none";
-    link_naar_van_kies_bestemming.style.display = "none";
-    link_naar_van_mijn_locatie_kies_bestemming.style.display = "none";
+    $("#link_van_naar").hide();
+    $("#link_van_naar_mijn_locatie").hide();
+    $("#link_van_naar_kies_bestemming").hide();
+    $("#link_van_naar_mijn_locatie_kies_bestemming").hide();
+    $("#link_naar_van").hide();
+    $("#link_naar_van_mijn_locatie").hide();
+    $("#link_naar_van_kies_bestemming").hide();
+    $("#link_naar_van_mijn_locatie_kies_bestemming").hide();
 
     $("#copyRoute").show();
 
     if (!start.checked  && !end.checked && !reverse.checked){
-        link_van_naar.style.display = "block";
+        $("#link_van_naar").show();
         $("#copyRoute").val($(link_van_naar).attr('href'));
     }
     else if (start.checked  && !end.checked && !reverse.checked){
-        link_van_naar_mijn_locatie.style.display = "block";
+        $("#link_van_naar_mijn_locatie").show();
         $("#copyRoute").val($(link_van_naar_mijn_locatie).attr('href'));
     }
     else if (!start.checked  && end.checked && !reverse.checked){
-        link_van_naar_kies_bestemming.style.display = "block";
+        $("#link_van_naar_kies_bestemming").show();
         $("#copyRoute").val($(link_van_naar_kies_bestemming).attr('href'));
     }
     else if (start.checked  && end.checked && !reverse.checked){
-        link_van_naar_mijn_locatie_kies_bestemming.style.display = "block";
+        $("#link_van_naar_mijn_locatie_kies_bestemming").show();
         $("#copyRoute").val($(link_van_naar_mijn_locatie_kies_bestemming).attr('href'));
     }
     else if (!start.checked  && !end.checked && reverse.checked){
-        link_naar_van.style.display = "block";
+        $("#link_naar_van").show();
         $("#copyRoute").val($(link_naar_van).attr('href'));
     }
     else if (start.checked  && !end.checked && reverse.checked){
-        link_naar_van_mijn_locatie.style.display = "block";
+        $("#link_naar_van_mijn_locatie").show();
         $("#copyRoute").val($(link_naar_van_mijn_locatie).attr('href'));
     }
     else if (!start.checked  && end.checked && reverse.checked){
-        link_naar_van_kies_bestemming.style.display = "block";
+        $("#link_naar_van_kies_bestemming").show();
         $("#copyRoute").val($(link_naar_van_kies_bestemming).attr('href'));
     }
     else if (start.checked  && end.checked && reverse.checked){
-        link_naar_van_mijn_locatie_kies_bestemming.style.display = "block";
+        $("#link_naar_van_mijn_locatie_kies_bestemming").show();
         $("#copyRoute").val($(link_naar_van_mijn_locatie_kies_bestemming).attr('href'));
     }
 
