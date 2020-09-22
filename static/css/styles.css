@@ -2,10 +2,6 @@
     height: 1.25em;
 }
 
-#dont-click-button:hover {
-  background-color: pink;
-}
-
 .custom-file-input ~ .custom-file-label::after {
     content: "Upload";
     color: #ffffff;
@@ -39,4 +35,8 @@
     margin-left: -36px;
     padding-top: 5px;
     padding-bottom: 5px;
+}
+
+#dont-click-button:hover {
+  background-color: pink;
 }
