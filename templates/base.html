@@ -5,11 +5,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}{% endblock %}</title>
         <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon/favicon.ico') }}">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+        <!-- Bootstrap core CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Slide button Bootstrap -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css">
+        <!-- CSS for this site -->
         <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     </head>
-    <body class="container p-3 my-3 border">
+    <body>
+        <main class="container p-3 my-3 border">
         <h1>Knooppunten</h1>
         <h2>Handleiding</h2>
         <p>Met deze website kan u een route van fietsknooppunten maken en de bijbehorende navigatie laten doen door <a href="https://www.google.com/maps/" target="_blank">Google Maps</a>, zodat je snel én makkelijk een rondje kan gaan fietsen!</p>
@@ -38,7 +46,7 @@
             </div>
             <div class="col-md-3">
                 <h3>Stap 3: Vertrekken</h3>
-                <p>U kan met de <input type="checkbox" data-toggle="toggle" data-size="mini"  data-onstyle="info" data-offstyle="outline-info" data-on="Aan" data-off="Uit"> bepalen welk parcours voor u uitgestippeld wordt.</p>
+                <p>U kan met de <input id="test" type="checkbox" data-toggle="toggle" data-size="mini"  data-onstyle="info" data-offstyle="outline-info" data-on="Aan" data-off="Uit"> knoppen bepalen welk parcours voor u uitgestippeld wordt.</p>
                 <p>Door op de <a class="btn btn-secondary btn-xs"></a> routeknop te klikken opent de route in een nieuw tabblad van uw browser of in de Google Maps app op uw telefoon.</p>
                 <p>Met de <a class="btn btn-info btn-xs"></a> knoppen <em>Kopieer route</em> en <em>Kopieer alle routes</em> wordt de route naar uw klembord gekopieerd en kan u hem zo makkelijk ergens bewaren of met iemand delen.</p>
                 <div class="row">
@@ -48,11 +56,12 @@
                 </div>
             </div>
         </div>
+        </main>
         <footer>
-            <p>&copy; Sander Vanderlinden</p>
+            <p>&copy; 2020 Copyright: Sander Vanderlinden</p>
             <span>
                 <a href="https://www.linkedin.com/in/sander-vanderlinden">
-                    <img src="{{ url_for('static', filename='images/linkedin-icon.svg') }}"
+                    <img src="{{ url_for('static', filename='images/linkedin-icon-color-match.svg') }}"
                         alt="LinkedIn icon"
                         height="32px"
                     >
@@ -61,19 +70,25 @@
             </span>
             <span>
                 <a href="https://github.com/SanderVanderlinden">
-                    <img src="{{ url_for('static', filename='images/GitHub-Mark-32px.png') }}"
+                    <img src="{{ url_for('static', filename='images/GitHub-Mark-Light-32px.png') }}"
                         alt="GitHub Mark"
                         height="32px"
                     >
                     GitHub
                 </a>
             </span>
-    </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        </footer>
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Slide button Bootstrap -->
     <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+    <!-- js for this site -->
     <script src="{{ url_for('static', filename='js/base.js') }}"></script>
+    <!-- js block for pages importing this template -->
     {% block scripts %}{% endblock %}
     </body>
 </html>
